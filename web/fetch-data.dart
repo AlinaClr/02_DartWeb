@@ -1,9 +1,6 @@
-// https://dart.dev/tutorials/web/fetch-data
-
 import 'dart:html';
 import 'dart:convert';
 
-// Input fields
 final InputElement favoriteNumber =
     querySelector('#favoriteNumber') as InputElement;
 final InputElement valueOfPi = querySelector('#valueOfPi') as InputElement;
@@ -16,7 +13,6 @@ final RadioButtonInputElement loveChocolate =
 final RadioButtonInputElement noLoveForChocolate =
     querySelector('#noLoveForChocolate') as RadioButtonInputElement;
 
-// Result fields to display values as JSON
 final TextAreaElement intAsJson =
     querySelector('#intAsJson') as TextAreaElement;
 final TextAreaElement doubleAsJson =
@@ -31,7 +27,7 @@ final TextAreaElement mapAsJson =
     querySelector('#mapAsJson') as TextAreaElement;
 
 void main() {
-  // Set up the listeners.
+  //事件触发
   favoriteNumber.onKeyUp.listen(_showJson);
   valueOfPi.onKeyUp.listen(_showJson);
   loveChocolate.onClick.listen(_showJson);
@@ -48,11 +44,11 @@ void main() {
 // Pre-fill the form with some default values.
 void _populateFromJson() {
   const jsonDataAsString = '''{
-    "favoriteNumber": 73,
-    "valueOfPi": 3.141592,
+    "favoriteNumber": 7,
+    "valueOfPi": 3.1415926535,
     "chocolate": true,
-    "horoscope": "Cancer",
-    "favoriteThings": ["monkeys", "parrots", "lattes"]
+    "horoscope": "none",
+    "favoriteThings": ["photo", "film", "book"]
   }''';
 
   Map<String, dynamic> jsonData =
@@ -71,9 +67,7 @@ void _populateFromJson() {
   chocolateRadioButton.checked = true;
 }
 
-/// Display all values as JSON.
 void _showJson([Event? _]) {
-  // Grab the data that will be converted to JSON.
   final favNum = int.tryParse(favoriteNumber.value ?? '');
   final pi = double.tryParse(valueOfPi.value ?? '');
   final chocolate = loveChocolate.checked;
@@ -92,7 +86,6 @@ void _showJson([Event? _]) {
     'favoriteThings': favoriteThings
   };
 
-  // Convert to JSON and display results.
   intAsJson.text = json.encode(favNum);
   doubleAsJson.text = json.encode(pi);
   boolAsJson.text = json.encode(chocolate);

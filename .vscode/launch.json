@@ -5,9 +5,9 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Dart & Flutter",
-            "request": "launch",
+            "name": "Dart Web dev",
             "type": "dart",
+            "request": "launch",
             "program": "web/index.html"
         }
     ]

@@ -1,5 +1,3 @@
-// https://dart.dev/tutorials/web/low-level-html/remove-elements
-
 import 'dart:html';
 
 final InputElement toDoInput = querySelector('#to-do-input') as InputElement;
@@ -7,6 +5,7 @@ final UListElement toDoList = querySelector('#to-do-list') as UListElement;
 final ButtonElement deleteAll = querySelector('#delete-all') as ButtonElement;
 
 void main() {
+  //触发
   toDoInput.onChange.listen(addToDoItem);
   deleteAll.onClick.listen((_) => toDoList.children.clear());
 }

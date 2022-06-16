@@ -1,12 +1,12 @@
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: WhiteSmoke;
+    background-color: rgb(244, 157, 7);
     margin: 15px;
     color: black;
 }
 
 h2 {
-    color: black;
+    color: rgb(252, 5, 5);
 }
 
 #to-do-input {
